@@ -1,6 +1,6 @@
-# Sistema Gamificado de Quiz para Cursos Online
+# Sistema Gamificado de Quiz
 
-Este projeto tem como objetivo implementar um sistema de quiz gamificado para cursos online, permitindo que milhares de alunos participem simultaneamente. O sistema é construído com FastAPI e utiliza o Redis como banco de dados em memória para garantir baixa latência, alta concorrência e apuração em tempo real.
+Este projeto tem como objetivo implementar um sistema de quiz, permitindo que milhares de alunos participem simultaneamente. O sistema é construído com FastAPI e utiliza o Redis como banco de dados em memória para garantir baixa latência, alta concorrência e apuração em tempo real.
 
 ## 📄 Documentação da API
 Acesse a documentação completa no Postman:
