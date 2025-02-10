@@ -6,6 +6,11 @@ Este projeto tem como objetivo implementar um sistema de quiz, permitindo que mi
 Acesse a documentação completa no Postman:
 [🔗 Documentação no Postman](https://documenter.getpostman.com/view/26303615/2sAYX9mfR9)
 
+## Video
+Acesse o video da explicação:
+[🔗 Video explicando sobre o projeto](https://youtu.be/c1LVTiXJPOw)
+)
+
 
 ## Sumário
 
