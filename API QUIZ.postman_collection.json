@@ -1,0 +1,322 @@
+{
+	"info": {
+		"_postman_id": "781240d9-9333-480a-bb51-8ea599fc2f44",
+		"name": "API QUIZ",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26303615"
+	},
+	"item": [
+		{
+			"name": "Criar Quiz",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"quiz_id\": \"1\",\r\n    \"titulo\": \"Quiz de Geografia\",\r\n    \"descricao\": \"Teste seus conhecimentos sobre geografia.\",\r\n    \"professor\": \"Professor João\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Criar Perguntas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pergunta_id\": \"1\",\r\n    \"texto\": \"Qual é a capital do Brasil?\",\r\n    \"opcoes\": {\r\n        \"A\": \"Paris\",\r\n        \"B\": \"Brasilia\",\r\n        \"C\": \"Roma\",\r\n        \"D\": \"Berlim\"\r\n    },\r\n    \"resposta_correta\": \"B\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/pergunta/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"pergunta",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Votar na Pergunta",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"pergunta_id\": \"1\",\r\n    \"opcao\": \"B\",\r\n    \"aluno_id\": \"1\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/votar",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"votar"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alternativas Mais Votadas:",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/ranking/?pergunta_id=2",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"ranking",
+						""
+					],
+					"query": [
+						{
+							"key": "pergunta_id",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Questões mais acertadas",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/questoes-mais-acertadas/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"questoes-mais-acertadas",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Questões com mais abstenções",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/questoes-com-mais-abstencoes/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"questoes-com-mais-abstencoes",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Tempo médio de resposta por questão",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/tempo-medio/?pergunta_id=1",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"tempo-medio",
+						""
+					],
+					"query": [
+						{
+							"key": "pergunta_id",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alunos com maior acerto e mais rápidos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/alunos-maior-acerto-mais-rapidos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"alunos-maior-acerto-mais-rapidos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alunos com mais acertos",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/alunos-com-mais-acertos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"alunos-com-mais-acertos",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Alunos mais rapido",
+			"request": {
+				"auth": {
+					"type": "noauth"
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://127.0.0.1:8000/quiz/1/alunos-mais-rapidos/",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "8000",
+					"path": [
+						"quiz",
+						"1",
+						"alunos-mais-rapidos",
+						""
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
